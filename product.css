@@ -1,3 +1,35 @@
-.product-container {
+.category-image-container {
+    height: 200px;
+    overflow: hidden;
     display: flex;
+    align-items: center;
+}
+.category-image {
+    height: 200px;
+    transition: height 1s;
+}
+.category-image:hover {
+    height: 250px;
+}
+
+.products {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.products .product-container {
+    width: 25%;
+    background-color: white;
+    padding: 50px 12px 12px;
+    border-radius: 5px;
+}
+
+.products .product-container img {
+    width: 100%;
+    height: auto;
+    transition: all 0.5s ease;
+}
+.products .product-container img:hover {
+    transform: translateY(-20px);
+
 }
