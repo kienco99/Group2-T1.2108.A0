@@ -24,7 +24,7 @@
 </head>
 
 <body>
-    <div class="container h-100">
+    <div class="container">
         <div class="menu">
             <div class="up">
                 <ul>
@@ -75,175 +75,271 @@
         </div>
         <div id="categories">
         </div>
-        <div class="products" id="product-list"></div>
-        <div class="paging-container">
-            <nav aria-label="Page navigation example">
-                <ul class="pagination">
+        <div style="height: 100%;">
+            <div class="products" id="product-list"></div>
+            <div class="paging-container">
+                <nav aria-label="Page navigation example">
+                    <ul id="pagination" class="pagination justify-content-center">
 
-                </ul>
-            </nav>
+                    </ul>
+                </nav>
+            </div>
         </div>
-        <script>
-            const listOfProduct = [
-                {
-                    "queryName": "vay",
-                    "categoryName": "Váy",
-                    "categoryImage": "./img/600px-Example_image.svg.png",
-                    "productList": [
-                        {
-                            "name": "váy 1",
-                            "description": "description 1",
-                            "image": "./img/p4.jpg",
-                            "price": 200000
-                        },
-                        {
-                            "name": "váy 2",
-                            "description": "description 1",
-                            "image": "./img/p4.jpg",
-                            "price": 200000
-                        },
-                        {
-                            "name": "váy 3",
-                            "description": "description 1",
-                            "image": "./img/p4.jpg",
-                            "price": 200000
-                        },
-                        {
-                            "name": "váy 4",
-                            "description": "description 1",
-                            "image": "./img/p4.jpg",
-                            "price": 200000
-                        },
-                        {
-                            "name": "váy 5",
-                            "description": "description 1",
-                            "image": "./img/p4.jpg",
-                            "price": 200000
-                        },
-                        {
-                            "name": "váy 6",
-                            "description": "description 1",
-                            "image": "./img/p4.jpg",
-                            "price": 200000
-                        },
-                        {
-                            "name": "váy 7",
-                            "description": "description 1",
-                            "image": "./img/p4.jpg",
-                            "price": 200000
-                        },
-                        {
-                            "name": "váy 8",
-                            "description": "description 1",
-                            "image": "./img/p4.jpg",
-                            "price": 200000
-                        },
-                        {
-                            "name": "váy 9",
-                            "description": "description 1",
-                            "image": "./img/p4.jpg",
-                            "price": 200000
-                        },
-                        {
-                            "name": "váy 10",
-                            "description": "description 1",
-                            "image": "./img/p4.jpg",
-                            "price": 200000
-                        },
-                        {
-                            "name": "váy 11",
-                            "description": "description 1",
-                            "image": "./img/p4.jpg",
-                            "price": 200000
-                        },
-                        {
-                            "name": "váy 12",
-                            "description": "description 1",
-                            "image": "./img/p4.jpg",
-                            "price": 200000
-                        },
-                    ]
-                },
-                {
-                    "queryName": "trang-suc",
-                    "categoryName": "Trang sức",
-                    "categoryImage": "./img/600px-Example_image.svg.png",
-                    "productList": [
-                        {
-                            "name": "Trang sức 1",
-                            "description": "description 1",
-                            "image": "./img/p4.jpg",
-                            "price": 200000
-                        },
-                        {
-                            "name": "Trang sức 2",
-                            "description": "description 1",
-                            "image": "./img/p4.jpg",
-                            "price": 200000
-                        },
-                        {
-                            "name": "Trang sức 3",
-                            "description": "description 1",
-                            "image": "./img/p4.jpg",
-                            "price": 200000
-                        },
-                        {
-                            "name": "Trang sức 4",
-                            "description": "description 1",
-                            "image": "./img/p4.jpg",
-                            "price": 200000
-                        }
-                    ]
-                },
-                {
-                    "queryName": "gio",
-                    "categoryName": "Giỏ",
-                    "categoryImage": "./img/600px-Example_image.svg.png",
-                    "productList": [
-                        {
-                            "name": "Giỏ 1",
-                            "description": "description 1",
-                            "image": "./img/p4.jpg",
-                            "price": 200000
-                        },
-                        {
-                            "name": "Giỏ 2",
-                            "description": "description 1",
-                            "image": "./img/p4.jpg",
-                            "price": 200000
-                        },
-                        {
-                            "name": "Giỏ 3",
-                            "description": "description 1",
-                            "image": "./img/p4.jpg",
-                            "price": 200000
-                        },
-                        {
-                            "name": "Giỏ 4",
-                            "description": "description 1",
-                            "image": "./img/p4.jpg",
-                            "price": 200000
-                        }
-                    ]
-                }
-            ];
 
-            let urlParams = new URLSearchParams(window.location.search);
-            const cateParam = urlParams.get('cate');
-            const page = urlParams.get('page');
+    </div>
 
-            // Thêm query param "page" nếu chưa tồn tại
-            if (!page) {
-                urlParams.append('page', 1);
-                window.location.search = urlParams.toString();
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="footer-col">
+                    <h3 class="footer_heading">Chăm sóc khách hàng</h3>
+                    <ul class="footer-list">
+                        <li class="footer-item">
+                            <a href="" class="footer-item_link">trung tâm trợ giúp</a>
+                        </li>
+                        <li>
+                            <a href="" class="footer-item_link">Shop MaDam_CMT8</a>
+                        </li>
+                        <li>
+                            <a href="" class="footer-item_link">Hướng dẫn mua hàng</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3 class="footer_heading">Giới thiệu</h3>
+                    <ul class="footer-list">
+                        <li class="footer-item">
+                            <a href="" class="footer-item_link">trung tâm trợ giúp</a>
+                        </li>
+                        <li>
+                            <a href="" class="footer-item_link">Shop MaDam_CMT8</a>
+                        </li>
+                        <li>
+                            <a href="" class="footer-item_link">Hướng dẫn mua hàng</a>
+                        </li>
+                    </ul>
+                    <ul class="footer-list">
+                        <li class="footer-item">
+                            <a href="" class="footer-item_link">trung tâm trợ giúp</a>
+                        </li>
+                        <li>
+                            <a href="" class="footer-item_link">Shop MaDam_CMT8</a>
+                        </li>
+                        <li>
+                            <a href="" class="footer-item_link">Hướng dẫn mua hàng</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3 class="footer_heading">danh mục</h3>
+                    <ul class="footer-list">
+                        <li class="footer-item">
+                            <a href="" class="footer-item_link">trung tâm trợ giúp</a>
+                        </li>
+                        <li>
+                            <a href="" class="footer-item_link">Shop MaDam_CMT8</a>
+                        </li>
+                        <li>
+                            <a href="" class="footer-item_link">Hướng dẫn mua hàng</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3 class="footer_heading">theo dõi</h3>
+                    <ul class="footer-list">
+                        <li class="footer-item">
+                            <a href="" class="footer-item_link">Trung tâm trợ giúp</a>
+                        </li>
+                        <li>
+                            <a href="" class="footer-item_link">Shop MaDam_CMT8</a>
+                        </li>
+                        <li>
+                            <a href="" class="footer-item_link">Hướng dẫn mua hàng</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3 class="footer_heading">ứng dụng</h3>
+                    <ul class="footer-list">
+                        <li class="footer-item">
+                            <a href="" class="footer-item_link">trung tâm trợ giúp</a>
+                        </li>
+                        <li>
+                            <a href="" class="footer-item_link">Shop MaDam_CMT8</a>
+                        </li>
+                        <li>
+                            <a href="" class="footer-item_link">Hướng dẫn mua hàng</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const listOfProduct = [
+            {
+                "queryName": "vay",
+                "categoryName": "Váy",
+                "categoryImage": "./img/600px-Example_image.svg.png",
+                "productList": [
+                    {
+                        "name": "váy 1",
+                        "description": "description 1",
+                        "image": "./img/p4.jpg",
+                        "price": 200000
+                    },
+                    {
+                        "name": "váy 2",
+                        "description": "description 1",
+                        "image": "./img/p4.jpg",
+                        "price": 200000
+                    },
+                    {
+                        "name": "váy 3",
+                        "description": "description 1",
+                        "image": "./img/p4.jpg",
+                        "price": 200000
+                    },
+                    {
+                        "name": "váy 4",
+                        "description": "description 1",
+                        "image": "./img/p4.jpg",
+                        "price": 200000
+                    },
+                    {
+                        "name": "váy 5",
+                        "description": "description 1",
+                        "image": "./img/p4.jpg",
+                        "price": 200000
+                    },
+                    {
+                        "name": "váy 6",
+                        "description": "description 1",
+                        "image": "./img/p4.jpg",
+                        "price": 200000
+                    },
+                    {
+                        "name": "váy 7",
+                        "description": "description 1",
+                        "image": "./img/p4.jpg",
+                        "price": 200000
+                    },
+                    {
+                        "name": "váy 8",
+                        "description": "description 1",
+                        "image": "./img/p4.jpg",
+                        "price": 200000
+                    },
+                    {
+                        "name": "váy 9",
+                        "description": "description 1",
+                        "image": "./img/p4.jpg",
+                        "price": 200000
+                    },
+                    {
+                        "name": "váy 10",
+                        "description": "description 1",
+                        "image": "./img/p4.jpg",
+                        "price": 200000
+                    },
+                    {
+                        "name": "váy 11",
+                        "description": "description 1",
+                        "image": "./img/p4.jpg",
+                        "price": 200000
+                    },
+                    {
+                        "name": "váy 12",
+                        "description": "description 1",
+                        "image": "./img/p4.jpg",
+                        "price": 200000
+                    },
+                ]
+            },
+            {
+                "queryName": "trang-suc",
+                "categoryName": "Trang sức",
+                "categoryImage": "./img/600px-Example_image.svg.png",
+                "productList": [
+                    {
+                        "name": "Trang sức 1",
+                        "description": "description 1",
+                        "image": "./img/p4.jpg",
+                        "price": 200000
+                    },
+                    {
+                        "name": "Trang sức 2",
+                        "description": "description 1",
+                        "image": "./img/p4.jpg",
+                        "price": 200000
+                    },
+                    {
+                        "name": "Trang sức 3",
+                        "description": "description 1",
+                        "image": "./img/p4.jpg",
+                        "price": 200000
+                    },
+                    {
+                        "name": "Trang sức 4",
+                        "description": "description 1",
+                        "image": "./img/p4.jpg",
+                        "price": 200000
+                    }
+                ]
+            },
+            {
+                "queryName": "gio",
+                "categoryName": "Giỏ",
+                "categoryImage": "./img/600px-Example_image.svg.png",
+                "productList": [
+                    {
+                        "name": "Giỏ 1",
+                        "description": "description 1",
+                        "image": "./img/p4.jpg",
+                        "price": 200000
+                    },
+                    {
+                        "name": "Giỏ 2",
+                        "description": "description 1",
+                        "image": "./img/p4.jpg",
+                        "price": 200000
+                    },
+                    {
+                        "name": "Giỏ 3",
+                        "description": "description 1",
+                        "image": "./img/p4.jpg",
+                        "price": 200000
+                    },
+                    {
+                        "name": "Giỏ 4",
+                        "description": "description 1",
+                        "image": "./img/p4.jpg",
+                        "price": 200000
+                    }
+                ]
             }
+        ];
 
-            // Trường hợp vào trang phân loại chi tiết (tồn tại cateParam)
-            if (cateParam) {
-                const listProductOfCate = listOfProduct.filter(item => item.queryName === cateParam);
-                const pagingListProduct = listProductOfCate[0].productList.slice((page - 1) * 8, page * 8);
-                for (let i = 0; i < pagingListProduct.length; i++) {
-                    document.getElementById('product-list').innerHTML += ` 
+        let urlParams = new URLSearchParams(window.location.search);
+        const cateParam = urlParams.get('cate');
+        const page = urlParams.get('page');
+
+        // Thêm query param "page" nếu chưa tồn tại
+        if (!page) {
+            urlParams.append('page', 1);
+            window.location.search = urlParams.toString();
+        }
+
+        // Trường hợp vào trang phân loại chi tiết (tồn tại cateParam)
+        if (cateParam) {
+            //Filter sản phẩm ứng với cate
+            const listProductOfCate = listOfProduct.filter(item => item.queryName === cateParam);
+            const pageSize = 8;
+            calculatePagination(listProductOfCate[0].productList, pageSize, page)
+            const pagingListProduct = listProductOfCate[0].productList.slice((page - 1) * pageSize, page * pageSize);
+            for (let i = 0; i < pagingListProduct.length; i++) {
+                document.getElementById('product-list').innerHTML += ` 
                     <div class="product-container">
                         <a href="detail.html?id="><img src="${pagingListProduct[i].image}" alt=""></a>
                         <div class="product-detail">
@@ -252,11 +348,12 @@
                             <li>${pagingListProduct[i].price}<sup>đ</sup></li>
                         </div>
                     </div>`;
-                }
-                // Trường hợp vào trang phân loại chung
-            } else {
-                for (let i = 0; i < listOfProduct.length; i++) {
-                    document.getElementById('categories').innerHTML += ` 
+            }
+
+            // Trường hợp vào trang phân loại chung
+        } else {
+            for (let i = 0; i < listOfProduct.length; i++) {
+                document.getElementById('categories').innerHTML += ` 
                 <div class="d-flex product-container bg-light mb-2">
                     <div class="category-image-container">
                         <a href="product.html?cate=${listOfProduct[i].queryName}">
@@ -269,7 +366,27 @@
                         </h3>
                     </div>
                 </div>`;
-                }
             }
-        </script>
+        }
+
+        function calculatePagination(pagingListProduct, pageSize, currentPage) {
+            // Tính toán pagination
+            const totalPage = Math.ceil(pagingListProduct.length / pageSize);
+            document.getElementById('pagination').innerHTML += `
+                <li class="page-item ${Number(currentPage) === 1 ? 'disabled' : null}">
+                    <a class="page-link" href="${'product.html?cate=' + cateParam + '&page=' + (Number(currentPage) - 1)}" tabindex="-1">Previous</a>
+                  </li>`;
+            for (let i = 1; i <= totalPage; i++) {
+                document.getElementById('pagination').innerHTML += `<li class="page-item ${Number(currentPage) === i ? 'active' : null}">
+                        <a class="page-link" href="${'product.html?cate=' + cateParam + '&page=' + i}" tabindex="-1">${i}</a>
+                      </li>`;
+            }
+            console.log(totalPage === Number(currentPage))
+            document.getElementById('pagination').innerHTML += `
+                <li class="page-item ${totalPage === Number(currentPage) ? 'disabled' : null}">
+                    <a class="page-link" href="${'product.html?cate=' + cateParam + '&page=' + (Number(currentPage) + 1)}">Next</a>
+                  </li>
+                `;
+        }
+    </script>
 </body>

@@ -17,6 +17,10 @@
     flex-wrap: wrap;
 }
 
+.container {
+    min-height: 100vh;
+}
+
 .products .product-container {
     width: 25%;
     background-color: white;
@@ -31,5 +35,9 @@
 }
 .products .product-container img:hover {
     transform: translateY(-20px);
+}
 
+
+.paging-container {
+    padding: 30px;
 }
