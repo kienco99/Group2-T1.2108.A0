@@ -191,6 +191,14 @@ div.slidershow {
     padding-top: 20px;
     list-style: none;
 }
+.slider-product-one-content-item-text button {
+    background-color: rgb(241, 50, 50);
+}
+
+.slider-product-one-content-item-text button:hover {
+    background-color: orange;
+    color: white;
+}
 
 .slider-product-one-content-item-text li {
     margin-bottom: 6px;
