@@ -40,9 +40,9 @@
                             Product <i class="fas fa-sort-down"></i></a>
                         <div class="submenu">
                             <ul>
-                                <li><a href="product.html?cate=vay">Skirt</a></li>
-                                <li><a href="product.html?cate=trang-suc">Jewels</a></li>
-                                <li><a href="product.html?cate=gio">Hand bag</a></li>
+                                <li><a href="product.html?cate=skirt">Skirt</a></li>
+                                <li><a href="product.html?cate=jewels">Jewels</a></li>
+                                <li><a href="product.html?cate=hand_bag">Hand bag</a></li>
                             </ul>
                         </div>
                     </li>
@@ -73,9 +73,19 @@
             </div>
 
         </div>
+
+        <div class="d-flex align-items-center mb-3" id="sortBy-container">
+            <span>Sort By</span>
+            <select class="form-control ml-2" name="sortBy" id="sortBy" onchange="onChangeSort()">
+                <option value="category">Category</option>
+                <option value="designer">Designer</option>
+            </select>
+        </div>
+
         <div id="categories">
         </div>
         <div style="height: 100%;">
+
             <div class="products" id="product-list">
             </div>
             <div class="paging-container">
@@ -180,21 +190,24 @@
     <script>
         const listOfDesigner = [
             {
-                "designerName": "D1",
+                "designerName": "Tom Ford",
+                "designerImage": "./img/tom-ford.jpg",
                 "designerId": 1
             },
             {
-                "designerName": "D2",
+                "designerName": "Nguyen Cong Tri",
+                "designerImage": "./img/cong_tri.jpg",
                 "designerId": 2
             },
             {
-                "designerName": "D3",
+                "designerName": "David Tlale",
+                "designerImage": "./img/David_Tlale.png",
                 "designerId": 3
             }
         ]
         const listOfProduct = [
             {
-                "queryName": "vay",
+                "queryName": "skirt",
                 "categoryName": "Skirt",
                 "categoryImage": "./img/s2.jpg",
                 "productList": [
@@ -305,7 +318,7 @@
                 ]
             },
             {
-                "queryName": "trang-suc",
+                "queryName": "jewels",
                 "categoryName": "Jewels",
                 "categoryImage": "./img/slide3.png",
                 "productList": [
@@ -392,7 +405,7 @@
                 ]
             },
             {
-                "queryName": "gio",
+                "queryName": "hand_bag",
                 "categoryName": "Hand bag",
                 "categoryImage": "./img/slide2.jpg",
                 "productList": [
@@ -479,70 +492,133 @@
                 ]
             }
         ];
-            //?cate=vay&page=1
-        let urlParams = new URLSearchParams(window.location.search);
-        const cateParam = urlParams.get('cate');
-        const page = urlParams.get('page');
-        // Thêm query param "page" nếu chưa tồn tại
-        if (!page) {
-            urlParams.append('page', 1);
-            window.location.search = urlParams.toString();
-        }
-
-        // Trường hợp vào trang phân loại chi tiết (tồn tại cateParam)
-        if (cateParam) {
-            //Filter sản phẩm ứng với cate
-            const listProductOfCate = listOfProduct.filter(item => item.queryName === cateParam);
+        getProducts();
+        function getProducts(sortValue = null) {
+            let urlParams = new URLSearchParams(window.location.search);
+            const sortBy = urlParams.get('sortBy') ?? sortValue ?? 'category';
             const pageSize = 8;
-            calculatePagination(listProductOfCate[0].productList, pageSize, page)
-            const pagingListProduct = listProductOfCate[0].productList.slice((page - 1) * pageSize, page * pageSize);
-            for (let i = 0; i < pagingListProduct.length; i++) {
-                document.getElementById('product-list').innerHTML += ` 
-                    <div class="product-container">
-                        <a href="detail.html?id=${pagingListProduct[i].id}"><img src="${pagingListProduct[i].image}" alt=""></a>
-                        <div class="product-detail">
-                            <li>${pagingListProduct[i].name}</li>
-                            <li>Price</li>
-                            <li>${pagingListProduct[i].price}<sup>đ</sup></li>
-                        </div>
-                    </div>`;
+            if (sortBy === 'category') {
+                const queryParam = {
+                    name: 'cate',
+                    value: urlParams.get('cate'),
+                    sortBy: 'category'
+                }
+                if (queryParam.value) {
+                    document.getElementById('sortBy-container').className = "invisible"
+                    const page = urlParams.get('page');
+                    if (!page) {
+                        urlParams.append('page', 1);
+                        window.location.search = urlParams.toString();
+                    }
+                    const listProductOfCate = listOfProduct.filter(item => item.queryName === queryParam.value);
+                    calculatePagination(listProductOfCate[0].productList, pageSize, page, queryParam)
+                    const pagingListProduct = listProductOfCate[0].productList.slice((page - 1) * pageSize, page * pageSize);
+                    const cateIdx = listOfProduct.findIndex(d => d.queryName === queryParam.value);
+                    document.getElementById('categories').innerHTML = `<div><h2>${listOfProduct[cateIdx].categoryName}</h2></div>`;
+                    document.getElementById('product-list').innerHTML = null;
+                    for (let i = 0; i < pagingListProduct.length; i++) {
+                        document.getElementById('product-list').innerHTML += ` 
+                                <div class="product-container">
+                                    <a href="detail.html?&id=${pagingListProduct[i].id}"><img src="${pagingListProduct[i].image}" alt=""></a>
+                                    <div class="product-detail">
+                                        <li>${pagingListProduct[i].name}</li>
+                                        <li>Price</li>
+                                        <li>${pagingListProduct[i].price}<sup>đ</sup></li>
+                                    </div>
+                                </div>`;
+                    }
+                } else {
+                    document.getElementById('categories').innerHTML = null;
+                    document.getElementById('product-list').innerHTML = null;
+                    for (let i = 0; i < listOfProduct.length; i++) {
+                        document.getElementById('categories').innerHTML += ` 
+                            <div class="d-flex product-container bg-light mb-2">
+                                <div class="category-image-container">
+                                    <a class="product-link" href="product.html?sortBy=category&cate=${listOfProduct[i].queryName}">
+                                        <img src="${listOfProduct[i].categoryImage}" class="category-image" alt="category-image">
+                                    </a>
+                                </div>
+                                <div class="ml-2">
+                                    <h3>
+                                        ${listOfProduct[i].categoryName}
+                                    </h3>
+                                </div>
+                            </div>`;
+                    }
+                }
             }
-
-            // Trường hợp vào trang phân loại chung
-        } else {
-            for (let i = 0; i < listOfProduct.length; i++) {
-                document.getElementById('categories').innerHTML += ` 
-                <div class="d-flex product-container bg-light mb-2">
-                    <div class="category-image-container">
-                        <a href="product.html?cate=${listOfProduct[i].queryName}">
-                            <img src="${listOfProduct[i].categoryImage}" class="category-image" alt="category-image">
-                        </a>
-                    </div>
-                    <div class="ml-2">
-                        <h3>
-                            ${listOfProduct[i].categoryName}
-                        </h3>
-                    </div>
-                </div>`;
+            if (sortBy === 'designer') {
+                const queryParam = {
+                    name: 'designerId',
+                    value: urlParams.get('designerId'),
+                    sortBy: 'designer'
+                }
+                if (queryParam.value) {
+                    document.getElementById('sortBy-container').className = "invisible"
+                    const page = urlParams.get('page');
+                    if (!page) {
+                        urlParams.append('page', 1);
+                        window.location.search = urlParams.toString();
+                    }
+                    const listProductByDesigner = listOfProduct.map(item => item.productList).flat().filter(item => item.designerId === Number(queryParam.value));
+                    calculatePagination(listProductByDesigner, pageSize, page, queryParam)
+                    const pagingListProduct = listProductByDesigner.slice((page - 1) * pageSize, page * pageSize);
+                    const designerIdx = listOfDesigner.findIndex(d => d.designerId === Number(queryParam.value));
+                    document.getElementById('categories').innerHTML = `<div> <h2>Products designed by ${listOfDesigner[designerIdx].designerName}</h2></div>`;
+                    document.getElementById('product-list').innerHTML = ``;
+                    for (let i = 0; i < pagingListProduct.length; i++) {
+                        document.getElementById('product-list').innerHTML += ` 
+                                <div class="product-container">
+                                    <a href="detail.html?id=${pagingListProduct[i].id}"><img src="${pagingListProduct[i].image}" alt=""></a>
+                                    <div class="product-detail">
+                                        <li>${pagingListProduct[i].name}</li>
+                                        <li>Price</li>
+                                        <li>${pagingListProduct[i].price}<sup>đ</sup></li>
+                                    </div>
+                                </div>`;
+                    }
+                } else {
+                    document.getElementById('categories').innerHTML = null;
+                    document.getElementById('product-list').innerHTML = null;
+                    for (let i = 0; i < listOfDesigner.length; i++) {
+                        document.getElementById('categories').innerHTML += ` 
+                        <div class="d-flex product-container bg-light mb-2">
+                            <div class="category-image-container">
+                                <a class="product-link" href="product.html?sortBy=designer&designerId=${listOfDesigner[i].designerId}">
+                                    <img src="${listOfDesigner[i].designerImage}" class="category-image" alt="category-image">
+                                </a>
+                            </div>
+                            <div class="ml-2">
+                                <h3>
+                                    ${listOfDesigner[i].designerName}
+                                </h3>
+                            </div>
+                        </div>`;
+                    }
+                }
             }
         }
 
-        function calculatePagination(pagingListProduct, pageSize, currentPage) {
+        function onChangeSort() {
+            getProducts(document.getElementById('sortBy').value);
+        }
+
+        function calculatePagination(pagingListProduct, pageSize, currentPage, queryParam) {
             // Tính toán pagination
             const totalPage = Math.ceil(pagingListProduct.length / pageSize);
             document.getElementById('pagination').innerHTML += `
                 <li class="page-item ${Number(currentPage) === 1 ? 'disabled' : null}">
-                    <a class="page-link" href="${'product.html?cate=' + cateParam + '&page=' + (Number(currentPage) - 1)}" tabindex="-1">Previous</a>
+                    <a class="page-link" href="${'product.html?' + queryParam.name + '=' + queryParam.value + '&page=' + (Number(currentPage) - 1)}" tabindex="-1">Previous</a>
                   </li>`;
             for (let i = 1; i <= totalPage; i++) {
                 document.getElementById('pagination').innerHTML += `<li class="page-item ${Number(currentPage) === i ? 'active' : null}">
-                        <a class="page-link" href="${'product.html?cate=' + cateParam + '&page=' + i}" tabindex="-1">${i}</a>
+                        <a class="page-link" href="${'product.html?' + queryParam.name + '=' + queryParam.value + '&page=' + i}" tabindex="-1">${i}</a>
                       </li>`;
             }
             console.log(totalPage === Number(currentPage))
             document.getElementById('pagination').innerHTML += `
                 <li class="page-item ${totalPage === Number(currentPage) ? 'disabled' : null}">
-                    <a class="page-link" href="${'product.html?cate=' + cateParam + '&page=' + (Number(currentPage) + 1)}">Next</a>
+                    <a class="page-link" href="${'product.html?' + queryParam.name + '=' + queryParam.value + '&page=' + (Number(currentPage) + 1)}">Next</a>
                   </li>
                 `;
         }

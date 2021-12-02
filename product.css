@@ -1,17 +1,25 @@
-.category-image-container img {
+.category-image-container {
     height: 200px;
+    width: 300px;
     overflow: hidden;
     display: flex;
     align-items: center;
 }
-.category-image {
-    height: 200px;
-    transition: height 1s;
-}
-.category-image:hover {
-    height: 250px;
+
+.category-image-container .product-link {
+    width: 100%;
 }
 
+.category-image {
+    width: 100%;
+    transition: width 1s;
+}
+.category-image:hover {
+    width: 120%;
+}
+#sortBy {
+    width: 150px;
+}
 .products {
     display: flex;
     flex-wrap: wrap;
@@ -22,10 +30,12 @@
 }
 
 .products .product-container {
-    width: 25%;
+    width: 23%;
     background-color: white;
     padding: 50px 12px 12px;
     border-radius: 5px;
+    margin: 5px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 
 .products .product-container img {
