@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://kit.fontawesome.com/54f0cb7e4a.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <title>home</title>
+    <link rel="stylesheet" href="css/index.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="menu">
+            <div class="up">
+                <ul>
+                    <li class="logo2">
+                        <a><img src="img/imghome/logo2.jpg" alt="" style="width: 100px; height: 70px"></a>
+                    </li>
+                    <li>
+                        <a href=""><img src="img/imghome/home.png" alt="" style="width: 20px; height: 20px"> HomePage</a>
+                    </li>
+                    <li>
+                        <a href="product.html"><img src="img/imghome/packet.png" alt="" style="width: 30px; height: 20px"> Product <i class="fas fa-sort-down"></i></a>
+                        <div class="submenu">
+                            <ul>
+                                <li><a href="">Váy</a></li>
+                                <li><a href="">Trang sức</a></li>
+                                <li><a href="">Giỏ</a></li>
+                                <li><a href="">Quần áo</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <a href=""><img src="img/imghome/news.png" alt="" style="width: 30px; height: 20px"> News</a>
+                    </li>
+                    <li>
+                        <a href=""><img src="img/imghome/group.png" alt="" style="width: 30px; height: 20px">About us</a>
+                    </li>
+                    <li>
+                        <a href=""><img src="img/imghome/phone-call.png" alt="" style="width: 30px; height: 20px"> Contact</a>
+                    </li>
+                    <li>
+                        <a href=""><img src="img/imghome/shopping-cart.png" alt="" style="width: 30px; height: 20px; margin-left: 130px;"></a>
+                    </li>
+                    <li>
+                        <a href=""><img src="img/imghome/user.png" alt="" style="width: 30px; height: 20px;"></a>
+                    </li>
+
+                </ul>
+            </div>
+            <div class="down">
+                <div class="search d-flex align-items-center justify-content-between px-2">
+                    <input type="text" placeholder="Search">
+                    <button><img src="img/imghome/search.png" alt=""></button>
+                </div>
+            </div>
+        </div>
+        <!-- ----------------------------chi tiết sản phẩm----------------------------- -->
+        <div class="product">
+            <div class="container">
+                <!-- <div class="product-top row">
+                    <p>trang chủ</p> <span>&#10230; </span>
+                    <p>nu</p> <span>&#10230;</span>
+                    <p>hang nu moi ve</p> <span>&#10230;</span>
+                    <p>ao thun co tron</p>
+
+                </div> -->
+                <div class="product-content row">
+                    <div class="product-content-left row">
+                        <div class="product-content-left-big-img">
+                            <img src="img/imgproduct/vay1.jpg" alt="">
+                        </div>
+                        <div class="product-content-left-small-img">
+                            <img src="img/imgproduct/vay1.jpg" alt="">
+                            <img src="img/imgproduct/vay2.jpg" alt="">
+                            <img src="img/imgproduct/vay3.jpg" alt="">
+                            <img src="img/imgproduct/vay4.jpg" alt="">
+                        </div>
+                    </div>
+                    <div class="product-content-right">
+                        <div class="product-content-right-product-name">
+                            <h1>Váy</h1>
+                            <!-- <p>d34234</p> -->
+                        </div>
+                        <div class="product-content-right-product-price">
+                            <p>12.0000 <sup>d</sup></p>
+                        </div>
+                        <!-- <div class="product-content-right-product-color">
+                            <p><span style="font-weight: bold;">mau sac</span>: den</p>
+                            <div class="product-content-right-product-color-img">
+                                <img src="img/imgproduct/mau den.jpg" alt="" style="width:30px; height:30px">
+                            </div>
+                        </div> -->
+                        <div class="product-content-right-product-size">
+                            <p style="font-weight: bold;">size:</p>
+                            <div class="size">
+                                <span>S</span>
+                                <span>SM</span>
+                                <span>L</span>
+                                <span>XL</span>
+                                <span>xxl</span>
+                            </div>
+                            <p style="color: red;">vui long chon size!!!!</p>
+                        </div>
+                        <div class="quantity">
+                            <p style="font-weight: bold;">so luong:</p>
+                            <input type="number" min="0" value="1">
+                        </div>
+                        <div class="product-content-right-product-buttom">
+                            <button><i class="fas fa-shopping-cart"></i><p>mua hang</p></button>
+                            <button><p>tim tai cua hang</p></button>
+                        </div>
+                        <div class="product-content-right-product-icon">
+                            <div class="product-content-right-product-icon-item">
+                                <p><i class="fas fa-phone"></i>phone</p>
+                            </div>
+                            <div class="product-content-right-product-icon-item">
+                                <p><i class="fas fa-comments"></i>chat</p>
+                            </div>
+                            <div class="product-content-right-product-icon-item">
+                                <p> <i class="fas fa-envelope-open-text"></i>Mail</p>
+                            </div>
+                        </div>
+                        <div class="product-content-right-produc-QR">
+                            <img src="img/imgproduct/qrcode.jpg" alt="" style="width:100px; height:100px">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- ----------------------------footer------------------------------------ -->
+        <footer class="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="footer-col">
+                        <h3 class="footer_heading">Chăm sóc khách hàng</h3>
+                        <ul class="footer-list">
+                            <li class="footer-item">
+                                <a href="" class="footer-item_link">trung tâm trợ giúp</a>
+                            </li>
+                            <li>
+                                <a href="" class="footer-item_link">Shop MaDam_CMT8</a>
+                            </li>
+                            <li>
+                                <a href="" class="footer-item_link">Hướng dẫn mua hàng</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h3 class="footer_heading">Giới thiệu</h3>
+                        <ul class="footer-list">
+                            <li class="footer-item">
+                                <a href="" class="footer-item_link">trung tâm trợ giúp</a>
+                            </li>
+                            <li>
+                                <a href="" class="footer-item_link">Shop MaDam_CMT8</a>
+                            </li>
+                            <li>
+                                <a href="" class="footer-item_link">Hướng dẫn mua hàng</a>
+                            </li>
+                        </ul>
+                        <ul class="footer-list">
+                            <li class="footer-item">
+                                <a href="" class="footer-item_link">trung tâm trợ giúp</a>
+                            </li>
+                            <li>
+                                <a href="" class="footer-item_link">Shop MaDam_CMT8</a>
+                            </li>
+                            <li>
+                                <a href="" class="footer-item_link">Hướng dẫn mua hàng</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-col">
+                        <h3 class="footer_heading">theo dõi</h3>
+                        <ul class="footer-list">
+                            <li class="footer-item">
+                                <a href="" class="footer-item_link">trung tâm trợ giúp</a>
+                            </li>
+                            <li>
+                                <a href="" class="footer-item_link">Shop MaDam_CMT8</a>
+                            </li>
+                            <li>
+                                <a href="" class="footer-item_link">Hướng dẫn mua hàng</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h3 class="footer_heading">ứng dụng</h3>
+                        <ul class="footer-list">
+                            <li class="footer-item">
+                                <a href="" class="footer-item_link"><i class="fa fa-facebook-f" style=" font-size:40px"></i></a>
+                            </li>
+                            <li>
+                                <a href="" class="footer-item_link"><i class="fa fa-google" style=" font-size:40px"></i></a>
+                            </li>
+                            <li>
+                                <a href="" class="footer-item_link"><i class="fa fa-twitter" style=" font-size:40px"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h3 class="footer_heading">Địa chỉ</h3>
+                        <ul class="footer-list">
+                            <li class="footer-item">
+                                <a href="" class="footer-item_link">Cách mạng tháng 8 - quận 3 - TP.HCM</a>
+                            </li>
+                            <li>
+                                <a href="" class="footer-item_link">MAP</a> <br>
+                                <img src="img/imghome/map.png" alt="">
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+</body>
+
+</html>
