@@ -1,155 +1,235 @@
-*{
-    margin:0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Roboto', sans-serif;
-}
-section{
-    position: relative;
-    width: 100%;
-    height: 100vh;
-    display: flex;
-}
-section .img-bg{
-    position: relative;
-    width: 50%;
-    height: 100%;
-}
-section .img-bg img{
-    position: absolute;
-    top: 0;
-    left: 0;
+html, body{
     width: 100%;
     height: 100%;
-    object-fit: cover;
 }
-section .noi-dung{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 50%;
-    height: 100%;
-}
-section .noi-dung .form{
-    width: 50%;
-}
-section .noi-dung .form h2{
-    color: #607d8b;
-    font-weight: 500;
-    font-size: 1.5em;
-    text-transform: uppercase;
-    margin-bottom: 20px;
-    border-bottom: 4px solid #e74e32;
-    display: inline-block;
-    letter-spacing: 1px;
-}
-section .noi-dung .form .input-form{
-    margin-bottom: 20px;
-}
-section .noi-dung .form .input-form span{
-    font-size: 16px;
-    margin-bottom: 5px;
-    display: inline-block;
-    color: #607db8;
-    letter-spacing: 1px;
-     }
-section .noi-dung .form .input-form input{
-    width: 100%;
-    padding: 10px 20px;
-    outline: none;
-    border: 1px solid #607d8b;
-    font-size: 16px;
-    letter-spacing: 1px;
-    color: #607d8b;
-    background: transparent;
-    border-radius: 30px;
+    .container {
+        min-height: 100vh;
+        width: 100%;
+        height: auto;
+        margin: 0 auto;
     }
-section .noi-dung .form .input-form input[type="submit"]{
-    background: #ff4545;
-    color: #fff;
-    outline: none;
-    border: none;
-    font-weight: 500;
-    cursor: pointer;
-    box-shadow: 0 1px 1px rgba(0,0,0,0.12),
-               0 2px 2px rgba(0,0,0,0.12),
-               0 4px 4px rgba(0,0,0,0.12),
-              0 8px 8px rgba(0,0,0,0.12),
-              0 16px 16px rgba(0,0,0,0.12);
-}
-section .noi-dung .form .input-form input[type="submit"]:hover{
-    background: #f53636;
-}
-section .noi-dung .form .nho-dang-nhap{
-    margin-bottom: 10px;
-    color: #607d8b;
-    font-size: 14px;
-}
-section .noi-dung .form .input-form p{
-    color: #607d8b;
-}
-section .noi-dung .form .input-form p a{
-    color: #ff6145;
-}
-section .noi-dung .form h3{
-    color: #607d8b;
-    text-align: center;
-    margin: 80px 0 10px;
-    font-weight: 500;
-}
-section .noi-dung .form .icon-dang-nhap{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-section .noi-dung .form .icon-dang-nhap li{
-    list-style: none;
-    cursor: pointer;
-    width: 50px;
-    height: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-section .noi-dung .form .icon-dang-nhap li:nth-child(1){
-    color: #3b5999;
-}
-section .noi-dung .form .icon-dang-nhap li:nth-child(2){
-    color: #dd4b39;
-}
-section .noi-dung .form .icon-dang-nhap li:nth-child(3){
-    color: #55acee;
-}
-section .noi-dung .form .icon-dang-nhap li i{
-    font-size: 24px;
-}
-@media (max-width: 768px){
-    section .img-bg{
+    
+    .menu {
+        width: 100%;
+        background-color: burlywood;
+        margin-bottom: 20px;
+    }
+    
+    .up {
+        height: 70px;
+        margin: 0 auto;
+    }
+    
+    .up ul {
+        list-style: none;
+        margin-top: 0px;
+    }
+    
+    .up>ul>li {
+        display: inline-block;
+        padding: 10px;
+        padding-left: 0px;
         position: absolute;
-        top: 0;
+    }
+    
+    .up ul li:hover {
+        background-color: rgba(red, green, blue, alpha);
+        border-radius: 15px;
+    }
+    
+    .up ul li a {
+        text-decoration: none;
+        font-size: 20px;
+        font-weight: bold;
+        color: black;
+        padding-right: 10px;
+    }
+    
+    .up ul li a img {
+        vertical-align: middle;
+    }
+    
+    .logo2 a img {
+        padding-right: 100px;
+    }
+    
+    .down {
+        height: 50px;
+        width: 80%;
+        margin: 0 auto;
+    }
+    
+    .search {
+        height: 38px;
+        width: 550px;
+        background-color: white;
+        margin-left: 200px;
+        border-radius: 15px
+    }
+    
+    .search input {
+        width: 485px;
+        height: 35px;
+        border: 0px;
+        padding-left: 10px;
+        border-radius: 15px
+    }
+    .search input:focus, button:focus {
+        outline: unset !important;
+    }
+    .search button {
+        height: 30px;
+        border: 0px;
+        background-color: transparent;
+        cursor: pointer;
+    }
+    
+    .search button img {
+        width: 20px;
+        height: 20px;
+        vertical-align: middle;
+        border-radius: 5px;
+    }
+    
+    .content {
+        width: 1000px;
+        margin: 20px auto;
+        display: grid;
+        grid-template-columns: 150px 150px;
+        grid-template-rows: 150px 150px 150px;
+    }
+    
+    div.slidershow {
+        background: green;
+        width: 100%;
+        height: 300px;
+    }
+        .up ul li {
+            position: relative;
+        }  
+    .submenu { 
+        position: absolute;
+        background-color: #ddd;
+        width: 300px;
+        height: auto;
         left: 0;
-        width: 100%;
-        height: 100%;
-    }
-    section .noi-dung{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
-        height: 100%;
-        z-index: 1;
-    }
-    section .noi-dung .form{
-        width: 100%;
-        padding: 40px;
-        background: rgba(255 255 255 / 0.9);
-        margin: 50px;
-    }
-    section .noi-dung .form h3{
-        color: #607d8b;
-        text-align: center;
-        margin: 30px 0 10px;
-        font-weight: 500;
-    }
+    top: 100%;
+    border-radius: 10px;
+    padding: 10px;
+    display: none;
+    z-index: 10;
 }
 
+.submenu ul {
+    display: flex;
+    flex-direction: column;
+}
+
+.submenu ul li {
+    padding: 6px 0;
+}
+
+.up ul li:hover .submenu {
+    display: block;
+}
+
+.submenu ul li:hover a {
+    color: red;
+}
+
+.submenu ul li:hover {
+    background: none;
+}
+
+
+/* -------------slider------------ */
+
+.slider {
+    background: lightgray;
+    margin: 0 auto;
+}
+
+
+/* ---------------- sản phẩm tiêu biểu----------------- */
+
+.slider-product-one {
+    padding: 15px 0;
+}
+
+.slider-product-one-content {
+    padding: 12px;
+    background-color: pink;
+}
+
+.slider-product-one-content h2 {
+    color: red;
+    font-size: 50px;
+    text-align: center;
+}
+
+.slider-product-one-content-items {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.slider-product-one-content-item {
+    width: 16%;
+    background-color: white;
+    padding: 50px 12px 12px;
+    border-radius: 5px;
+}
+
+.slider-product-one-content-item img {
+    width: 100%;
+    transition: all 0.5s ease;
+}
+
+.slider-product-one-content-item-text {
+    padding-top: 20px;
+    list-style: none;
+}
+.slider-product-one-content-item-text button {
+    background-color: rgb(241, 50, 50);
+}
+
+.slider-product-one-content-item-text button:hover {
+    background-color: orange;
+    color: white;
+}
+
+.slider-product-one-content-item-text li {
+    margin-bottom: 6px;
+    font-size: 20px;
+}
+
+.slider-product-one-content-item-text li:first-child {
+    color: black;
+    font-size: 30px;
+}
+
+.slider-product-one-content-item-text li:nth-child(3) {
+    color: red;
+}
+
+.slider-product-one-content-item-text li:last-child {
+    color: red;
+}
+
+.slider-product-one-content-item:hover img {
+    transform: translateY(-20px);
+}
+
+
+/* ---------------footer-------------- */
+
+.gird_row {
+    float: left;
+    text-decoration: none;
+    vertical-align: middle;
+}
+
+
+.payment-content-right-payment button:hover {
+    background-color: black;
+    color: #fff;
+}     
