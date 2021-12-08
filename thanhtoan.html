@@ -8,8 +8,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://kit.fontawesome.com/54f0cb7e4a.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
     <title>home</title>
     <link rel="stylesheet" href="./index.css">
     <link rel="stylesheet" href="./thanhtoan.css">
@@ -44,14 +47,16 @@
                         <a href=""><img src="img/news.png" alt="" style="width: 30px; height: 20px"> News</a>
                     </li>
                     <li>
-                        <a href="AboutUs.html"><img src="img/group.png" alt="" style="width: 30px; height: 20px">About us</a>
+                        <a href="AboutUs.html"><img src="img/group.png" alt="" style="width: 30px; height: 20px">About
+                            us</a>
                     </li>
                     <li>
-                        <a href="contact.html"><img src="img/phone-call.png" alt="" style="width: 30px; height: 20px"> Contact</a>
+                        <a href="contact.html"><img src="img/phone-call.png" alt="" style="width: 30px; height: 20px">
+                            Contact</a>
                     </li>
                     <li>
                         <a href=""><img src="img/shopping-cart.png" alt=""
-                                style="width: 30px; height: 20px; margin-left: 130px;"></a>
+                                style="width: 30px; height: 20px; margin-left: 130px;"><span class="badge badge-danger" id="cart">0</span></a>
                     </li>
                     <li>
                         <a href="login.html"><img src="img/user.png" alt="" style="width: 30px; height: 20px;"></a>
@@ -86,65 +91,78 @@
             <div class="container">
                 <div class="payment-content row">
                     <div class="payment-content-left">
-                        <div class="payment-content-left-method-delivery">
-                            <p style="font-weight: bold;">Phương thức giao hàng</p>
-                            <div class="payment-content-left-method-delivery-item">
-                                <input checked type="radio">
-                                <label for="">Giao hàng chuyển phát nhanh</label>
+                        <div>
+                            <span style="font-weight: bold;">Shopping Cart</span>
+                            <div class="cart-detail-container">
+                                <div class="cart-detail d-flex">
+                                    <div class="product-no font-weight-bold">No.</div>
+                                    <div class="product-name font-weight-bold">Product name</div>
+                                    <div class="product-price font-weight-bold px-3">Price</div>
+                                    <div class="invisible"><button class="btn btn-danger ml-2">x</button></div>
+                                </div>
+                                <div id="cart-detail"></div>
+                                <!--                
+                                <div class="cart-detail d-flex justify-content-end border-top">
+                                    <div class="product-price"><span class="font-weight-bold mr-3">Total:</span>50.000đ
+                                    </div>
+                                </div> -->
                             </div>
+
                         </div>
-                        <div class="payment-content-left-method-payment">
-                            <p style="font-weight: bold;">Phương thức thanh toán</p>
-                            <p>Mọi giao dịch được bảo mật và mã hóa. thông tin thẻ tín dụng sẽ không bao giờ được lưu lại.</p>
-                            <div class="payment-content-left-method-payment-item">
-                                <input name="method-payment" type="radio">
-                                <label for="">Thanh toán thẻ tín đụng (Onepay)</label>
-                            </div>
-                            <div class="payment-content-left-method-payment-item-img">
-                                <img src="img/visa.png" alt="">
-                            </div>
-                            <div class="payment-content-left-method-payment-item">
-                                <input checked name="method-payment" type="radio">
-                                <label for="">Thanh toán thẻ ATM (Onepay)</label>
-                            </div>
-                            <div class="payment-content-left-method-payment-item-img">
-                                <img src="img/vcb.jpg" alt="">
-                            </div>
-                            <div class="payment-content-left-method-payment-item">
-                                <input name="method-payment" type="radio">
-                                <label for="">Thanh toán MoMo</label>
-                            </div>
-                            <div class="payment-content-left-method-payment-item-img">
-                                <img src="img/momo.png" alt="">
-                            </div>
-                            <div class="payment-content-left-method-payment-item">
-                                <input name="method-payment" type="radio">
-                                <label for="">Thu tiền tận nơi</label>
-                            </div>
-                        </div>
+
+
                     </div>
                     <div class="payment-content-right">
-                        <div class="payment-content-right-buttom">
-                            <input type="text" placeholder="Mã giảm giá">
-                            <button><i class="fas fa-check"></i></button>
+                        <div class="payment-content-left-method-delivery">
+                            <span style="font-weight: bold;">Delivery Method</span>
+                            <div class="payment-content-left-method-delivery-item">
+                                <input checked type="radio" id="1" name="delivery-method">
+                                <label for="1">Standard Delivery</label>
+                            </div>
+                            <div class="payment-content-left-method-delivery-item">
+                                <input type="radio" id="2" name="delivery-method">
+                                <label for="2">Fast Delivery</label>
+                            </div>
+
                         </div>
-                        <div class="payment-content-right-buttom">
-                            <input type="text" placeholder="Mã cộng tác viên">
-                            <button><i class="fas fa-check"></i></button>
-                        </div>
-                        <div class="payment-content-right-mnv">
-                            <select name="" id="">
-                                <option value="">Chọn mã nhân viên thân thiết</option>
-                                <option value="">D345</option>
-                                <option value="">c345</option>
-                                <option value="">b345</option>
-                                <option value="">a345</option>
-                            </select>
+                        <div class="payment-content-left-method-payment">
+                            <span style="font-weight: bold;">Payment method</span>
+                            <div>All transactions are secure and encrypted. Credit card information will never be saved
+                                again.</div>
+                            <div class="payment-content-left-method-payment-item d-flex align-items-center mb-2">
+                                <input checked name="method-payment" id="payment-1" type="radio">
+                                <div class="payment-content-left-method-payment-item-img mx-2" for="payment-1">
+                                    <img src="img/visa.png" alt="">
+                                </div>
+                                <label for="payment-1">Credit card</label>
+                            </div>
+
+                            <div class="payment-content-left-method-payment-item d-flex align-items-center mb-2">
+                                <input name="method-payment" id="payment-2" type="radio">
+                                <div class="payment-content-left-method-payment-item-img mx-2">
+                                    <img src="img/atm.png" alt="">
+                                </div>
+                                <label for="payment-2">ATM</label>
+                            </div>
+                            <div class="payment-content-left-method-payment-item d-flex align-items-center mb-2">
+                                <input name="method-payment" id="payment-3" type="radio">
+                                <div class="payment-content-left-method-payment-item-img mx-2">
+                                    <img src="img/paypal.png" alt="">
+                                </div>
+                                <label for="payment-3">Paypal</label>
+                            </div>
+                            <div class="payment-content-left-method-payment-item d-flex align-items-center mb-2">
+                                <input name="method-payment" id="payment-4" type="radio">
+                                <div class="payment-content-left-method-payment-item-img mx-2">
+                                    <img src="img/cash.png" alt="">
+                                </div>
+                                <label for="payment-4">Cash On Delivery</label>
+                            </div>
                         </div>
                     </div>
                 </div>
                 <div class="payment-content-right-payment">
-                    <button>Tiếp tục thanh toán</button>
+                    <button class="btn btn-primary">Tiếp tục thanh toán</button>
                 </div>
             </div>
         </section>
@@ -201,7 +219,10 @@
                         <li class="footer-item">
                             <a href="" class="footer-item_link">590 CMT8, district 3, Ho Chi Minh City</a>
                             <div id="map">
-                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d346.4225083215248!2d106.66604690035224!3d10.786533499098462!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752ed2392c44df%3A0xd2ecb62e0d050fe9!2zRlBUIEFwdGVjaCBIQ00gLSBI4buHIFRo4buRbmcgxJDDoG8gVOG6oW8gTOG6rXAgVHLDrG5oIFZpw6puIFF14buRYyBU4bq_IChTaW5jZSAxOTk5KQ!5e0!3m2!1svi!2s!4v1638961989253!5m2!1svi!2s" width="400" height="250" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                                <iframe
+                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d346.4225083215248!2d106.66604690035224!3d10.786533499098462!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752ed2392c44df%3A0xd2ecb62e0d050fe9!2zRlBUIEFwdGVjaCBIQ00gLSBI4buHIFRo4buRbmcgxJDDoG8gVOG6oW8gTOG6rXAgVHLDrG5oIFZpw6puIFF14buRYyBU4bq_IChTaW5jZSAxOTk5KQ!5e0!3m2!1svi!2s!4v1638961989253!5m2!1svi!2s"
+                                    width="400" height="250" style="border:0;" allowfullscreen=""
+                                    loading="lazy"></iframe>
                             </div>
                         </li>
                     </ul>
@@ -209,7 +230,40 @@
             </div>
         </footer>
     </div>
+    <script>
+        getCartInfo();
+        function getCartInfo() {
+            getCartAmount();
 
+            let currentCart = JSON.parse(localStorage.getItem('cart')) ?? [];
+            document.getElementById('cart-detail').innerHTML = null;
+
+            for (let i = 0; i < currentCart.length; i++) {
+                document.getElementById('cart-detail').innerHTML += `
+                    <div class="cart-detail d-flex align-items-center">
+                        <div class="product-no">${i + 1}</div>
+                        <div class="product-name px-3">${currentCart[i].name}</div>
+                        <div class="product-price px-3">${currentCart[i].price} đ</div>
+                        <div><button class="btn btn-danger ml-2" onclick="removeItemFromCart(${i})"><span class="font-weight-bold">x</span></button></div>
+                    </div>`
+            }
+            document.getElementById('cart-detail').innerHTML += ` <div class="cart-detail d-flex justify-content-end border-top">
+                    <div class="p-3 pr-5"><span class="font-weight-bold mr-3">Total:</span> ${currentCart.reduce((a, b) => a + b.price, 0)} đ
+                    </div>
+                </div>`
+        }
+
+        function getCartAmount() {
+            let currentCart = JSON.parse(localStorage.getItem('cart')) ?? [];
+            document.getElementById('cart').innerText = currentCart.length;
+        }
+        function removeItemFromCart(index) {
+            let currentCart = JSON.parse(localStorage.getItem('cart')) ?? [];
+            currentCart.splice(index, 1);
+            localStorage.setItem('cart', JSON.stringify(currentCart));
+            getCartInfo();
+        }
+    </script>
 </body>
 
 </html>
