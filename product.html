@@ -53,7 +53,7 @@
                         </div>
                     </li>
                     <li>
-                        <a href=""><img src="img/news.png" alt="" style="width: 30px; height: 20px"> News</a>
+                        <a href="news.html"><img src="img/news.png" alt="" style="width: 30px; height: 20px"> News</a>
                     </li>
                     <li>
                         <a href="AboutUs.html"><img src="img/group.png" alt="" style="width: 30px; height: 20px">About
@@ -506,9 +506,12 @@
                                         <li>Price</li>
                                         <li>${pagingListProduct[i].price}<sup>đ</sup></li>
                                     </div>
-                                    <button class="btn btn-warning"  onclick="addToCart(${pagingListProduct[i].id})">
-                                        Add to cart
-                                    </button>
+                                    <div class="d-flex justify-content-center">
+                                        <button class="btn btn-warning"  onclick="addToCart(${pagingListProduct[i].id})">
+                                            Add to cart
+                                        </button>
+                                    </div>
+                                    
                                 </div>`;
                     }
                 } else {
