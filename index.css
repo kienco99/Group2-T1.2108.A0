@@ -229,7 +229,35 @@ html, body{
 }
 
 
-.payment-content-right-payment button:hover {
-    background-color: black;
-    color: #fff;
-}     
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+ul {
+    list-style: none;
+}
+
+.footer {
+    background-color: #24262b;
+    padding: 30px 0 0 0;
+}
+
+.footer-item_link {
+    color: white;
+}
+.footer-col {
+    padding-left:15px;
+}
+.footer_heading {
+    font-size: 1.2em !important;
+    color: orange;
+}
+.footer-list {
+    padding: 10px;
+}
+
+.footer-col ul li img {
+    width: 400px;
+    height: 400px
+}
