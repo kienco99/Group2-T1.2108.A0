@@ -14,7 +14,27 @@ html, body{
         background-color: burlywood;
         margin-bottom: 20px;
     }
-    
+    .header-logo {
+    right: 80px;
+}
+
+.header-logo a {
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+}
+
+.header-logo a span:first-child {
+    color: orangered;
+    font-weight: 700;
+    font-size: 24px;
+}
+
+.header-logo a span:last-child {
+    color: #000;
+    font-size: 14px;
+    font-style: italic;
+}
     .up {
         height: 70px;
         margin: 0 auto;
