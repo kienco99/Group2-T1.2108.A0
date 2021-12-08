@@ -24,9 +24,10 @@
 </head>
 
 <body>
-    
-    </div>        
-        </div><div class="container">
+
+    </div>
+    </div>
+    <div class="container">
         <div class="menu">
             <div class="up">
                 <ul>
@@ -55,7 +56,8 @@
                         <a href=""><img src="img/news.png" alt="" style="width: 30px; height: 20px"> News</a>
                     </li>
                     <li>
-                        <a href="AboutUs.html"><img src="img/group.png" alt="" style="width: 30px; height: 20px">About us</a>
+                        <a href="AboutUs.html"><img src="img/group.png" alt="" style="width: 30px; height: 20px">About
+                            us</a>
                     </li>
                     <li>
                         <a href="contact.html"><img src="img/phone-call.png" alt="" style="width: 30px; height: 20px">
@@ -63,7 +65,7 @@
                     </li>
                     <li>
                         <a href="thanhtoan.html"><img src="img/shopping-cart.png" alt=""
-                                style="width: 30px; height: 20px; margin-left: 130px;"></a>
+                                style="width: 30px; height: 20px; margin-left: 130px;"><span class="badge badge-danger" id="cart">0</span></a>
                     </li>
                     <li>
                         <a href="login.html"><img src="img/user.png" alt="" style="width: 30px; height: 20px;"></a>
@@ -155,12 +157,14 @@
                     <li class="footer-item">
                         <a href="" class="footer-item_link">590 CMT8, district 3, Ho Chi Minh City</a>
                         <div id="map">
-                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d346.4225083215248!2d106.66604690035224!3d10.786533499098462!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752ed2392c44df%3A0xd2ecb62e0d050fe9!2zRlBUIEFwdGVjaCBIQ00gLSBI4buHIFRo4buRbmcgxJDDoG8gVOG6oW8gTOG6rXAgVHLDrG5oIFZpw6puIFF14buRYyBU4bq_IChTaW5jZSAxOTk5KQ!5e0!3m2!1svi!2s!4v1638961989253!5m2!1svi!2s" width="400" height="250" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d346.4225083215248!2d106.66604690035224!3d10.786533499098462!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752ed2392c44df%3A0xd2ecb62e0d050fe9!2zRlBUIEFwdGVjaCBIQ00gLSBI4buHIFRo4buRbmcgxJDDoG8gVOG6oW8gTOG6rXAgVHLDrG5oIFZpw6puIFF14buRYyBU4bq_IChTaW5jZSAxOTk5KQ!5e0!3m2!1svi!2s!4v1638961989253!5m2!1svi!2s"
+                                width="400" height="250" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
                         </div>
                     </li>
                 </ul>
             </div>
-        </div>        
+        </div>
     </footer>
 
     <script>
@@ -469,6 +473,7 @@
             }
         ];
         getProducts();
+        getCartAmount();
         function getProducts(sortValue = null) {
             let urlParams = new URLSearchParams(window.location.search);
             const sortBy = urlParams.get('sortBy') ?? sortValue ?? 'category';
@@ -501,6 +506,9 @@
                                         <li>Price</li>
                                         <li>${pagingListProduct[i].price}<sup>đ</sup></li>
                                     </div>
+                                    <button class="btn btn-warning"  onclick="addToCart(${pagingListProduct[i].id})">
+                                        Add to cart
+                                    </button>
                                 </div>`;
                     }
                 } else {
@@ -551,6 +559,11 @@
                                         <li>Price</li>
                                         <li>${pagingListProduct[i].price}<sup>đ</sup></li>
                                     </div>
+                                    <div>
+                                        <button class="btn btn-warning" onclick="addToCart(${pagingListProduct[i].id})">
+                                            Add to cart
+                                        </button>
+                                    </div>
                                 </div>`;
                     }
                 } else {
@@ -591,12 +604,27 @@
                         <a class="page-link" href="${'product.html?' + queryParam.name + '=' + queryParam.value + '&page=' + i}" tabindex="-1">${i}</a>
                       </li>`;
             }
-            console.log(totalPage === Number(currentPage))
             document.getElementById('pagination').innerHTML += `
                 <li class="page-item ${totalPage === Number(currentPage) ? 'disabled' : null}">
                     <a class="page-link" href="${'product.html?' + queryParam.name + '=' + queryParam.value + '&page=' + (Number(currentPage) + 1)}">Next</a>
                   </li>
                 `;
+        }
+
+        function addToCart(productId) {
+            const productList = listOfProduct.map(item => item.productList).flat();
+            const productIndex = productList.findIndex(item => item.id === productId);
+            if (productIndex > -1) {
+                let currentCart = JSON.parse(localStorage.getItem('cart')) ?? [];
+                currentCart.push(productList[productIndex])
+                localStorage.setItem('cart', JSON.stringify(currentCart));
+            }
+            getCartAmount();
+        }
+
+        function getCartAmount() {
+            let currentCart = JSON.parse(localStorage.getItem('cart')) ?? [];
+            document.getElementById('cart').innerText = currentCart.length;
         }
     </script>
 </body>

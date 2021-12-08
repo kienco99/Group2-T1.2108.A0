@@ -1,6 +1,5 @@
 .payment-content-left-method-payment-item-img img {
     width: 100px;
-    height: 50px;
 }
 
 .payment {
@@ -84,7 +83,9 @@ label {
     color: #75758a;
     padding-left: 12px;
 }
-
+.payment-content-left-method-payment-item {
+    height: 60px;
+}
 .payment-content-right-payment {
     margin-top: 50px;
     text-align: center;
@@ -104,4 +105,26 @@ label {
 .payment-content-right-payment button:hover {
     background-color: black;
     color: #fff;
+}
+
+.cart-detail {
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.cart-detail .product-no {
+    width: 50px;
+}
+
+.cart-detail .product-name {
+    width: 100%;
+}
+
+.cart-detail .product-price {
+    width: 150px;
+    text-align: right;
+}
+.cart-detail-container{
+    overflow: auto;
+    padding: 20px;
 }
