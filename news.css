@@ -1,0 +1,32 @@
+.slider {
+    margin: 10px 0;
+    padding: auto;
+    display: flex;
+}
+
+.slide {
+    width: 100%;
+    padding: 0 10px;
+}
+
+.slider-right {
+    padding-right: 10px;
+}
+
+.slider-right img {
+    width: 95%;
+    width: 300px;
+    height: 400px;
+}
+
+.bottom {
+    height: 500px;
+    margin: 10px 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.bottom div img {
+    width: 330px;
+    height: 330px;
+}
