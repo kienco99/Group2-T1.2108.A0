@@ -222,14 +222,48 @@ html, body{
 
 /* ---------------footer-------------- */
 
-.gird_row {
-    float: left;
-    text-decoration: none;
-    vertical-align: middle;
+ *{
+    margin: 0px;
+    padding: 0px;
 }
 
+.container {
+    max-width: 90%;
+    margin: auto;
+}
 
-.payment-content-right-payment button:hover {
-    background-color: black;
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+ul {
+    list-style: none;
+}
+
+.footer {
+    background-color: #24262b;
+    padding: 30px 0;
+}
+
+.footer-col {
+    width: 20%;
+    padding: 0 15px;
+}
+
+.footer-col h3 {
+    font-size: 25px;
     color: #fff;
-}     
+    text-transform: capitalize;
+    margin-bottom: 30px;
+    font-weight: 500;
+}
+
+.footer-col ul li a {
+    color: #fff;
+}
+
+.footer-col ul li img {
+    width: 400px;
+    height: 400px
+}
