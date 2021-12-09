@@ -13,7 +13,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
         crossorigin="anonymous"></script>
-    <title>home</title>
+    <title>MB STORE</title>
     <link rel="stylesheet" href="./index.css">
     <link rel="stylesheet" href="./detail.css">
 </head>
@@ -30,11 +30,12 @@
                         </a>
                     </li>
                     <li>
-                        <a href="index.html"><img src="img/home.png" alt="" style="width: 20px; height: 20px">
+                        <a href="index.html"><img src="img/home.png" alt="home" style="width: 20px; height: 20px">
                             Home</a>
                     </li>
                     <li>
-                        <a href="product.html"><img src="img/packet.png" alt="" style="width: 30px; height: 20px">
+                        <a href="product.html"><img src="img/packet.png" alt="product"
+                                style="width: 30px; height: 20px">
                             Product <i class="fas fa-sort-down"></i></a>
                         <div class="submenu">
                             <ul>
@@ -45,18 +46,21 @@
                         </div>
                     </li>
                     <li>
-                        <a href="news.html"><img src="img/news.png" alt="" style="width: 30px; height: 20px"> News</a>
+                        <a href="news.html"><img src="img/news.png" alt="news" style="width: 30px; height: 20px">
+                            News</a>
                     </li>
                     <li>
-                        <a href="AboutUs.html"><img src="img/group.png" alt="" style="width: 30px; height: 20px">About
+                        <a href="AboutUs.html"><img src="img/group.png" alt="about us"
+                                style="width: 30px; height: 20px">About
                             us</a>
                     </li>
                     <li>
-                        <a href="contact.html"><img src="img/phone-call.png" alt="" style="width: 30px; height: 20px">
+                        <a href="contact.html"><img src="img/phone-call.png" alt="contact"
+                                style="width: 30px; height: 20px">
                             Contact</a>
                     </li>
                     <li>
-                        <a href="thanhtoan.html"><img src="img/shopping-cart.png" alt=""
+                        <a href="thanhtoan.html"><img src="img/shopping-cart.png" alt="checkout"
                                 style="width: 30px; height: 20px; margin-left: 130px;"><span class="badge badge-danger"
                                 id="cart">0</span></a>
                     </li>
@@ -69,57 +73,14 @@
             <div class="down">
                 <div class="search d-flex align-items-center justify-content-between px-2">
                     <input type="text" placeholder="Search">
-                    <button><img src="img/search.png" alt=""></button>
+                    <button><img src="img/search.png" alt="search"></button>
                 </div>
             </div>
 
         </div>
         <!-- ----------------------------chi tiết sản phẩm----------------------------- -->
         <div id="product" class="product">
-            <div class="container">
-                <div class="product-content row">
-                    <div class="product-content-left row">
-                        <div class="product-content-left-big-img">
-                            <img src="img/vay1.jpg" alt="">
-                        </div>
-                        <div class="product-content-left-small-img">
-                            <img src="img/vay1.jpg" alt="">
-                            <img src="img/vay2.jpg" alt="">
-                            <img src="img/vay3.jpg" alt="">
-                            <img src="img/vay4.jpg" alt="">
-                        </div>
-                    </div>
-                    <div class="product-content-right">
-                        <div class="product-content-right-product-name">
-                            <h1>Váy</h1>
-                            <!-- <p>d34234</p> -->
-                        </div>
-                        <div class="product-content-right-product-price">
-                            <p>12.0000 <sup>d</sup></p>
-                        </div>
-                        <div class="product-content-right-product-size">
-                            <p style="font-weight: bold;">size:</p>
-                            <div class="size">
-                                <span>S</span>
-                                <span>SM</span>
-                                <span>L</span>
-                                <span>XL</span>
-                                <span>XXL</span>
-                            </div>
-                            <p style="color: red;">vui long chon size!!!!</p>
-                        </div>
-                        <div class="quantity">
-                            <p style="font-weight: bold;">so luong:</p>
-                            <input type="number" min="0" value="1">
-                        </div>
-                        <div class="product-content-right-product-buttom">
-                            <button><i class="fas fa-shopping-cart"></i>
-                                <p>Add to cart</p>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
+
         </div>
         <!-- ----------------------------footer------------------------------------ -->
         <footer class="footer container">
@@ -459,25 +420,18 @@
             document.getElementById('product').innerHTML =
                 `
             <div class="container">
-                <div class="product-content row">
-                    <div class="product-content-left row">
+                <div class="product-content d-flex">
+                    <div class="product-content-left">
                         <div class="product-content-left-big-img">
-                            <img src="${productDetail.image}" alt="">
-                        </div>
-                        <div class="product-content-left-small-img">
-                            <img src="img/vay1.jpg" alt="">
-                            <img src="img/vay2.jpg" alt="">
-                            <img src="img/vay3.jpg" alt="">
-                            <img src="img/vay4.jpg" alt="">
+                            <img src="${productDetail.image}" alt="${productDetail.name}">
                         </div>
                     </div>
                     <div class="product-content-right">
                         <div class="product-content-right-product-name">
                             <h2>${productDetail.name}</h2>
-                            <!-- <p>d34234</p> -->
                         </div>
                         <div class="product-content-right-product-price">
-                            <h3>${productDetail.price}<sup>d</sup></h3>
+                            <h3>${productDetail.price}<sup>đ</sup></h3>
                         </div>
                         
                         <div class="product-content-right-product-size mb-3">
@@ -490,11 +444,7 @@
                                 <button class="btn size" onclick="onClickSelectSize('XXL')">XXL</button>
                             </div>
                         </div>
-                        <div class="quantity">
-                            <span style="font-weight: bold;">Quantity:</span>
-                            <input type="number" class="form-control" min="0" value="1">
-                        </div>
-                            <button class="btn btn-warning d-flex align-items-center"  onclick="addToCart(${listOfProduct[productIndex].id})">
+                            <button class="btn btn-warning d-flex align-items-center mt-5"  onclick="addToCart(${listOfProduct[productIndex].id})">
                                 <i class="fas fa-shopping-cart mr-2"></i>
                                 <span>Add to cart</span>
                             </button>

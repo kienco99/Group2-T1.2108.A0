@@ -40,6 +40,15 @@
 .product-detail {
     height: 150px;
 }
+
+.product-detail li{
+   list-style: none;
+}
+
+
+.product-detail .product-name{
+    height: 100px;
+ }
 .products .product-container img {
     width: 100%;
     height: auto;
