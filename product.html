@@ -500,9 +500,9 @@
                     for (let i = 0; i < pagingListProduct.length; i++) {
                         document.getElementById('product-list').innerHTML += ` 
                                 <div class="product-container">
-                                    <a href="detail.html?&id=${pagingListProduct[i].id}"><img src="${pagingListProduct[i].image}" alt=""></a>
+                                    <a href="detail.html?&id=${pagingListProduct[i].id}"><img src="${pagingListProduct[i].image}" alt="${pagingListProduct[i].name}"></a>
                                     <div class="product-detail">
-                                        <li>${pagingListProduct[i].name}</li>
+                                        <li class="product-name">${pagingListProduct[i].name}</li>
                                         <li>Price</li>
                                         <li>${pagingListProduct[i].price}<sup>đ</sup></li>
                                     </div>
@@ -522,7 +522,7 @@
                             <div class="d-flex product-container bg-light mb-2">
                                 <div class="category-image-container">
                                     <a class="product-link" href="product.html?sortBy=category&cate=${listOfProduct[i].queryName}">
-                                        <img src="${listOfProduct[i].categoryImage}" class="category-image" alt="category-image">
+                                        <img src="${listOfProduct[i].categoryImage}" class="category-image"  alt="${listOfProduct[i].categoryName}">
                                     </a>
                                 </div>
                                 <div class="ml-2">
@@ -556,13 +556,13 @@
                     for (let i = 0; i < pagingListProduct.length; i++) {
                         document.getElementById('product-list').innerHTML += ` 
                                 <div class="product-container">
-                                    <a href="detail.html?id=${pagingListProduct[i].id}"><img src="${pagingListProduct[i].image}" alt=""></a>
+                                    <a href="detail.html?id=${pagingListProduct[i].id}"><img src="${pagingListProduct[i].image}"  alt="${pagingListProduct[i].name}"></a>
                                     <div class="product-detail">
-                                        <li>${pagingListProduct[i].name}</li>
+                                        <li class="product-name">${pagingListProduct[i].name}</li>
                                         <li>Price</li>
                                         <li>${pagingListProduct[i].price}<sup>đ</sup></li>
                                     </div>
-                                    <div>
+                                    <div class="d-flex justify-content-center">
                                         <button class="btn btn-warning" onclick="addToCart(${pagingListProduct[i].id})">
                                             Add to cart
                                         </button>
@@ -577,7 +577,7 @@
                         <div class="d-flex product-container bg-light mb-2">
                             <div class="category-image-container">
                                 <a class="product-link" href="product.html?sortBy=designer&designerId=${listOfDesigner[i].designerId}">
-                                    <img src="${listOfDesigner[i].designerImage}" class="category-image" alt="category-image">
+                                    <img src="${listOfDesigner[i].designerImage}" class="category-image"  alt="${listOfDesigner[i].designerName}">
                                 </a>
                             </div>
                             <div class="ml-2">

@@ -224,7 +224,8 @@ html, body{
 
 .slider-product-one-content-item-text li:first-child {
     color: black;
-    font-size: 30px;
+    font-size: 15px;
+    height: 120px;
 }
 
 .slider-product-one-content-item-text li:nth-child(3) {
@@ -238,7 +239,9 @@ html, body{
 .slider-product-one-content-item:hover img {
     transform: translateY(-20px);
 }
-
+.carousel-inner {
+    height: 600px;
+}
 
 /* ---------------footer-------------- */
 

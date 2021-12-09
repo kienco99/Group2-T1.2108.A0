@@ -13,7 +13,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
         crossorigin="anonymous"></script>
-    <title>home</title>
+    <title>MB STORE</title>
     <link rel="stylesheet" href="./index.css">
     <link rel="stylesheet" href="./thanhtoan.css">
 </head>
@@ -245,12 +245,12 @@
                     <div class="cart-detail d-flex align-items-center">
                         <div class="product-no">${i + 1}</div>
                         <div class="product-name px-3">${currentCart[i].name}</div>
-                        <div class="product-price px-3">${currentCart[i].price} đ</div>
+                        <div class="product-price px-3">${currentCart[i].price}<sup>đ</sup></div>
                         <div><button class="btn btn-danger ml-2" onclick="removeItemFromCart(${i})"><span class="font-weight-bold">x</span></button></div>
                     </div>`
             }
             document.getElementById('cart-detail').innerHTML += ` <div class="cart-detail d-flex justify-content-end border-top">
-                    <div class="p-3 pr-5"><span class="font-weight-bold mr-3">Total:</span> ${currentCart.reduce((a, b) => a + b.price, 0)} đ
+                    <div class="p-3 pr-5"><span class="font-weight-bold mr-3">Total:</span> ${currentCart.reduce((a, b) => a + b.price, 0)}<sup>đ</sup>
                     </div>
                 </div>`
         }
